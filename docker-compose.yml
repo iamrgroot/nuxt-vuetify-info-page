@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+    nuxt-vuetify:
+        image: node:lts
+        container_name: nuxt-vuetify
+        environment:
+          - PUID=${UID}
+          - PGID=${UID}
+          - TZ=${TZ}
+        working_dir: /app
+        volumes:
+          - ./app:/app
+        command: sh -c "npm install && npm run generate"
+    
+    nuxt-nginx:
+        image: nginx:latest
+        container_name: nuxt-nginx
+        environment:
+          - PUID=${UID}
+          - PGID=${UID}
+          - TZ=${TZ}
+        ports:
+          - 8080:80
+        volumes:
+          - ./app/dist:/var/www
+          - ./nginx:/etc/nginx/conf.d
+        depends_on:
+          - nuxt-vuetify
+        networks:
+            mass_mass:
+                ipv4_address: 172.19.0.99
+        restart: unless-stopped
+        labels:
+          - traefik.enable=true
+          - traefik.http.routers.http_nuxt.rule=Host(`${APP_HOST}`)
+          - traefik.http.routers.http_nuxt.entrypoints=http
+          - traefik.http.routers.http_nuxt.middlewares=redirect
+          - traefik.http.middlewares.redirect.redirectscheme.scheme=https
+          - traefik.http.routers.https_nuxt.rule=Host(`${APP_HOST}`)
+          - traefik.http.routers.https_nuxt.tls=true
+          - traefik.http.routers.https_nuxt.entrypoints=https
+          - traefik.http.routers.https_nuxt.tls.certresolver=basic
+
+networks:
+    mass_mass:
+        external: true
