@@ -22,7 +22,7 @@
 
                         <v-card-text class="text--primary">
                             <div>Full-stack developer</div>
-                            <div>Mainly using Laravel (PHP), Vue.js or Micsrosoft AL.</div>
+                            <div>Mainly using Laravel (PHP), Vue.js or Microsoft AL.</div>
                         </v-card-text>
 
                         <v-card-actions>
