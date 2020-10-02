@@ -1,6 +1,7 @@
 import {
     mdiAccount,
     mdiEmail,
+    mdiGithub
 } from '@mdi/js';
 
 export default {
@@ -9,6 +10,7 @@ export default {
         values: {
             mdiAccount,
             mdiEmail,
+            mdiGithub
         }
     },
 }
