@@ -22,7 +22,7 @@
 
                         <v-card-text class="text--primary">
                             <div>Full-stack developer</div>
-                            <div>Mainly using Laravel (PHP), Vue.js or Microsoft AL.</div>
+                            <div>Working mainly with a Laravel + VueJS + MySQL stack.</div>
                         </v-card-text>
 
                         <v-card-actions>
@@ -40,6 +40,14 @@
                                 href="mailto:info@rgroot.nl"
                             >
                                 <v-icon>$mdiEmail</v-icon>
+                            </v-btn>
+
+                            <v-btn
+                                text
+                                icon
+                                href="https://github.com/IAmRGroot"
+                            >
+                                <v-icon>$mdiGithub</v-icon>
                             </v-btn>
                         </v-card-actions>
                     </v-card>
