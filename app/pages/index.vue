@@ -22,7 +22,7 @@
 
                         <v-card-text class="text--primary">
                             <div>Full-stack developer</div>
-                            <div>Working mainly with a Laravel + VueJS + MySQL stack.</div>
+                            <div>Working mainly with a Laravel + VueJS (Typescript) + MySQL + Redis stack.</div>
                         </v-card-text>
 
                         <v-card-actions>
@@ -37,7 +37,7 @@
                             <v-btn
                                 text
                                 icon
-                                href="mailto:info@rgroot.nl"
+                                href="mailto:info+website@rgroot.nl"
                             >
                                 <v-icon>$mdiEmail</v-icon>
                             </v-btn>
